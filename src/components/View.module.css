@@ -1,0 +1,34 @@
+@import url("https://fonts.googleapis.com/css2?family=Beau+Rivage&family=Laila&family=Literata&family=Montaga&family=Open+Sans:wght@300&family=Philosopher&family=Satisfy&display=swap");
+
+.View {
+  margin: 1rem 0.2rem 4rem 0.2rem;
+  box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+}
+
+.View p {
+  padding: 0.8rem;
+  background-color: whitesmoke;
+  padding-left: 4rem;
+}
+
+.sideBorder {
+  border: 0.2px solid red;
+  position: absolute;
+  height: 3.8rem;
+  width: 1px;
+  margin-top: -0.8rem;
+  border-top: none;
+  border-bottom: none;
+  margin-left: -1.5rem;
+}
+
+.dotted_border {
+  border-bottom: dotted;
+  border-width: 0.1px;
+}
+
+.text {
+  font-family: "Satisfy", cursive;
+  margin-left: 3rem;
+  font-size: 1.5rem;
+}

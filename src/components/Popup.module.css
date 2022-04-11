@@ -1,0 +1,58 @@
+.PopupContainer {
+  display: flex;
+  justify-content: center;
+}
+
+.PopupContainer h3 {
+  text-align: center;
+}
+
+.remove {
+  position: absolute;
+  right: 1rem;
+  top: 1rem;
+}
+
+.remove:hover {
+  background-color: rgb(197, 22, 22);
+  cursor: pointer;
+}
+
+.popup {
+  position: absolute;
+  top: 20%;
+  opacity: 0.9;
+  background-color: rgb(202, 207, 224);
+  border-radius: 0.5rem;
+  padding: 2rem;
+  z-index: 1;
+  width: auto;
+  height: auto;
+}
+
+.paragraph {
+  padding: 1rem 0;
+}
+
+.popupText {
+  margin-left: 0.5rem;
+}
+
+.buttonsContainer {
+  display: flex;
+  justify-content: center;
+}
+
+.cancelPostBtn,
+.postBtn {
+  padding: 0.5rem;
+  margin: 0.5rem 0.5rem 0 0.5rem;
+  border-radius: 0.5rem;
+  border-style: solid;
+}
+
+.cancelPostBtn:hover,
+.postBtn:hover {
+  background-color: cadetblue;
+  cursor: pointer;
+}

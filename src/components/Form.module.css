@@ -1,0 +1,50 @@
+.formCont {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+form {
+  margin: 1rem;
+  justify-content: center;
+}
+
+label {
+  margin: 1rem 0 1rem 0;
+}
+
+input,
+select {
+  margin: 0.2rem 0 0.2rem 2rem;
+  height: 2rem;
+}
+
+.inputLastname {
+  margin-left: 3.6rem;
+}
+.inputFirstname {
+  margin-left: 3.5rem;
+}
+
+textarea {
+  margin: 0.2rem 0 0.2rem 4.6rem;
+}
+
+select {
+  margin-left: 6.2rem;
+}
+
+textarea,
+input,
+select {
+  width: 12rem;
+}
+
+.submit {
+  display: flex;
+  justify-content: center;
+  width: 10rem;
+  padding: 0.6rem;
+  margin-left: 10.5rem;
+  width: 40%;
+}
