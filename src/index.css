@@ -34,16 +34,39 @@ body {
   margin: 1rem 0.5rem;
   background-color: whitesmoke;
   height: 25rem;
+  display: flex;
+  flex-direction: column;
 }
 
 .title {
   font-size: 2rem;
   padding: 0.7rem 0.2rem;
+  text-align: center;
 }
 
 .listItem {
   padding: 0.5rem 0.5rem;
   margin-left: 1rem;
+}
+
+table {
+  border-collapse: collapse;
+}
+
+th {
+  padding: 3px;
+}
+
+tr {
+  height: 2rem;
+}
+
+td {
+  text-align: center;
+}
+
+tr:nth-child(even) {
+  background-color: #ada8a8;
 }
 
 footer {
@@ -58,7 +81,7 @@ footer {
   width: 100%;
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 800px) {
   .formView {
     flex-direction: column;
   }

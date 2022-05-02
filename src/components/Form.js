@@ -9,7 +9,7 @@ const Form = (props) => {
         onChange={props.changes}
         className={classes.form}
       >
-        <div>
+        <div className={classes.subContainer}>
           <label htmlFor="firstname"></label>
           First Name:
           <input
@@ -21,7 +21,7 @@ const Form = (props) => {
           />
         </div>
 
-        <div>
+        <div className={classes.subContainer}>
           <label htmlFor="lastname"></label>
           Last Name:
           <input
@@ -33,13 +33,13 @@ const Form = (props) => {
           />
         </div>
 
-        <div>
+        <div className={classes.subContainer}>
           <label htmlFor="phoneNumber"></label>
           Phone Number:
           <input type="text" id="phoneNumber" name="phonenumber" required />
         </div>
 
-        <div>
+        <div className={classes.subContainer}>
           <label htmlFor="role" className={classes.role}></label>
           Role:
           <select default="Default" name="role" id="role" required>
@@ -55,7 +55,7 @@ const Form = (props) => {
           </select>
         </div>
 
-        <div>
+        <div className={classes.subContainer}>
           <label htmlFor="message"> </label>
           Message:
           <textarea name="message" id="message" rows={5} required></textarea>

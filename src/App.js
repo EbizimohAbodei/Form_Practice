@@ -58,7 +58,7 @@ class App extends Component {
       })
       .then((res) => console.log(res))
       .catch((error) => console.log(error));
-    window.location.reload();
+    this.handleRefresh();
   };
 
   render() {
