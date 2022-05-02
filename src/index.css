@@ -22,24 +22,34 @@ body {
   background-color: cadetblue;
 }
 
+.formView {
+  display: flex;
+}
+
 .submit {
   width: 3rem;
 }
 
-.seperator_Text {
-  text-align: center;
-  padding: 0.7rem 0;
-  margin-bottom: -1rem;
-  margin-top: 2rem;
+.noteList {
+  margin: 1rem 0.5rem;
+  background-color: whitesmoke;
+  height: 25rem;
+}
+
+.title {
   font-size: 2rem;
-  width: 100%;
-  background-color: rgb(15, 109, 140);
+  padding: 0.7rem 0.2rem;
+}
+
+.listItem {
+  padding: 0.5rem 0.5rem;
+  margin-left: 1rem;
 }
 
 footer {
   display: flex;
   justify-content: center;
-  background-color: rgb(15, 109, 140);
+  background-color: #0f6d8c;
   height: 3rem;
   align-items: center;
   padding: 0.3rem;

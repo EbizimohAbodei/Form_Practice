@@ -1,0 +1,52 @@
+{
+  "notes": [
+    {
+      "id": 1,
+      "firstname": "Emmanuel",
+      "lastname": "David",
+      "phone": "337733794",
+      "role": "Principal",
+      "message": "The brown fox did something"
+    },
+    {
+      "id": 2,
+      "firstname": "Anna",
+      "lastname": "Jammo",
+      "phone": "84757445",
+      "role": "Teacher",
+      "message": "Some random message from the teacher"
+    },
+    {
+      "id": 3,
+      "firstname": "Greg",
+      "lastname": "Matson",
+      "phone": "095557344",
+      "role": "Asst. Principal",
+      "message": "Did you do your assignments"
+    },
+    {
+      "id": 4,
+      "firstname": "Summer",
+      "lastname": "John",
+      "phone": "0933733474",
+      "role": "Cleaner",
+      "message": "Something random"
+    },
+    {
+      "id": 5,
+      "firstname": "Anita",
+      "lastname": "James",
+      "phone": "0933647443",
+      "role": "Student",
+      "message": "Trying a new message"
+    },
+    {
+      "id": 6,
+      "firstname": "Toni",
+      "lastname": "Nissinen",
+      "phone": "0988447753",
+      "role": "Visitor",
+      "message": "Visiting the school is prohibited"
+    }
+  ]
+}

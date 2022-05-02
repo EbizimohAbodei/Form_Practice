@@ -5,6 +5,8 @@ import View from "./components/View";
 import Popup from "./components/Popup";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
+import NoteList from "./components/NoteList";
+const axios = require("axios").default;
 
 class App extends Component {
   state = {
@@ -13,8 +15,10 @@ class App extends Component {
     phonenumber: " ",
     message: " ",
     role: " ",
+    data: [],
     showPopup: false,
   };
+
   handleChange = (e) => {
     this.setState({ [e.target.name]: e.target.value });
   };
@@ -32,13 +36,36 @@ class App extends Component {
     this.setState({ showPopup: false });
   };
 
-  postData = () => {};
+  postData = () => {
+    axios
+      .post("http://localhost:3010/notes", {
+        id: "",
+        firstname: `${this.state.firstname}`,
+        lastname: `${this.state.lastname}`,
+        phone: `${this.state.phonenumber}`,
+        role: `${this.state.role}`,
+        message: `${this.state.message}`,
+      })
+      .then((res) => console.log(res))
+      .catch((error) => console.log(error));
+    window.location.reload();
+  };
+
   render() {
+    const ax = axios.create({
+      baseURL: "http://localhost:3010/",
+    });
+    ax.get("notes")
+      .then((response) => response.data)
+      .then((res) => this.setState({ data: res }));
+
     return (
       <div className="App">
         <Header />
-        <Form changes={this.handleChange} submit={this.handleSubmit} />
-        <h3 className="seperator_Text">Check your input</h3>
+        <div className="formView">
+          <Form changes={this.handleChange} submit={this.handleSubmit} />
+          <View {...this.state} />
+        </div>
         <div>
           {this.state.showPopup ? (
             <Popup
@@ -55,7 +82,7 @@ class App extends Component {
             ""
           )}
         </div>
-        <View {...this.state} />
+        <NoteList />
         <Footer />
       </div>
     );

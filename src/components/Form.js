@@ -42,8 +42,10 @@ const Form = (props) => {
         <div>
           <label htmlFor="role" className={classes.role}></label>
           Role:
-          <select defaultValue={"Default"} name="role" id="role">
-            <option value="Default">Choose an option</option>
+          <select default="Default" name="role" id="role" required>
+            <option value="" invalid="true" hidden>
+              Choose an option
+            </option>
             <option value="Teacher">Teacher</option>
             <option value="Principal" name="principal">
               Principal

@@ -1,8 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Beau+Rivage&family=Laila&family=Literata&family=Montaga&family=Open+Sans:wght@300&family=Philosopher&family=Satisfy&display=swap");
 
 .View {
-  margin: 1rem 0.2rem 4rem 0.2rem;
+  margin: 1rem 0.2rem;
   box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+  width: 60%;
 }
 
 .View p {
