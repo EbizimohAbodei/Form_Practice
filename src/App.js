@@ -36,6 +36,16 @@ class App extends Component {
     this.setState({ showPopup: false });
   };
 
+  componentDidMount() {
+    // const ax = axios.create({
+    //   baseURL: "http://localhost:3010/",
+    // });
+    axios
+      .get("http://localhost:3010/notes")
+      .then((response) => response.data)
+      .then((res) => this.setState({ data: res }));
+  }
+
   postData = () => {
     axios
       .post("http://localhost:3010/notes", {
@@ -52,13 +62,6 @@ class App extends Component {
   };
 
   render() {
-    const ax = axios.create({
-      baseURL: "http://localhost:3010/",
-    });
-    ax.get("notes")
-      .then((response) => response.data)
-      .then((res) => this.setState({ data: res }));
-
     return (
       <div className="App">
         <Header />
@@ -82,7 +85,7 @@ class App extends Component {
             ""
           )}
         </div>
-        <NoteList />
+        <NoteList data={this.state.data} />
         <Footer />
       </div>
     );

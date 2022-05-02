@@ -47,6 +47,14 @@
       "phone": "0988447753",
       "role": "Visitor",
       "message": "Visiting the school is prohibited"
+    },
+    {
+      "id": 7,
+      "firstname": "Jennifer",
+      "lastname": "Kats",
+      "phone": "0944632733",
+      "role": "Student",
+      "message": "New student on the block"
     }
   ]
 }

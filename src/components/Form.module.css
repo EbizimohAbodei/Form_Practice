@@ -45,3 +45,37 @@ select {
   padding: 0.6rem;
   margin-left: 8.4rem;
 }
+
+@media only screen and (max-width: 600px) {
+  .formCont {
+    display: flex;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  input,
+  select {
+    margin: 0.2rem 0 0.2rem 0rem;
+    height: 2rem;
+  }
+
+  .inputLastname {
+    margin-left: 0;
+  }
+  .inputFirstname {
+    margin-left: 0;
+  }
+  textarea {
+    margin: 0.2rem 0 0.2rem 0;
+  }
+
+  .submit {
+    display: flex;
+    justify-content: center;
+    width: 5rem;
+    padding: 0.6rem;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
