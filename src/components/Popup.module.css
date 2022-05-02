@@ -14,7 +14,7 @@
 }
 
 .remove:hover {
-  background-color: rgb(197, 22, 22);
+  background-color: #e82424;
   cursor: pointer;
 }
 
@@ -22,7 +22,7 @@
   position: absolute;
   top: 20%;
   opacity: 0.9;
-  background-color: rgb(202, 207, 224);
+  background-color: #c8adb3;
   border-radius: 0.5rem;
   padding: 2rem;
   z-index: 1;
@@ -53,6 +53,6 @@
 
 .cancelPostBtn:hover,
 .postBtn:hover {
-  background-color: cadetblue;
+  background-color: #a2697a;
   cursor: pointer;
 }

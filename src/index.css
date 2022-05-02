@@ -5,7 +5,7 @@
 
 header {
   display: flex;
-  background-color: rgb(15, 109, 140);
+  background-color: #ada8a8;
   height: auto;
   align-items: center;
   padding: 0.3rem;
@@ -19,15 +19,11 @@ header h1 {
 }
 
 body {
-  background-color: cadetblue;
+  background-color: #f1edee;
 }
 
 .formView {
   display: flex;
-}
-
-.submit {
-  width: 3rem;
 }
 
 .noteList {
@@ -66,13 +62,13 @@ td {
 }
 
 tr:nth-child(even) {
-  background-color: #ada8a8;
+  background-color: #efe2e5;
 }
 
 footer {
   display: flex;
   justify-content: center;
-  background-color: #0f6d8c;
+  background-color: #ada8a8;
   height: 3rem;
   align-items: center;
   padding: 0.3rem;
