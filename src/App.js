@@ -1,5 +1,5 @@
 import "./index.css";
-import React, { useState, useEffect, Component } from "react";
+import React, { useState, useEffect } from "react";
 import Form from "./components/Form";
 import View from "./components/View";
 import Popup from "./components/Popup";
@@ -9,136 +9,126 @@ import NoteList from "./components/NoteList";
 import EditForm from "./components/EditForm";
 const axios = require("axios").default;
 
-class App extends Component {
-  state = {
+const App = () => {
+  const [inputData, setInputData] = useState({
     firstname: " ",
     lastname: " ",
     phonenumber: " ",
     message: " ",
     role: " ",
-    data: [],
-    note: [],
-    showPopup: false,
-    editMode: false,
+  });
+
+  const [data, setData] = useState([]);
+  const [note, setNote] = useState({});
+  const [showPopup, setShowPopup] = useState(false);
+  const [editMode, setEditMode] = useState(false);
+
+  const handleChange = (e) => {
+    setInputData({ ...inputData, [e.target.name]: e.target.value });
   };
 
-  handleChange = (e) => {
-    this.setState({ [e.target.name]: e.target.value });
-  };
-
-  handleSubmit = (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
-    this.setState({ showPopup: true });
+    setShowPopup({ showPopup: true });
   };
 
-  handleRefresh = () => {
+  const handleRefresh = () => {
     window.location.reload();
   };
 
-  cancelPost = () => {
-    this.setState({ showPopup: false });
+  const cancelPosting = () => {
+    setShowPopup(!showPopup);
   };
 
-  componentDidMount() {
+  useEffect(() => {
     // const ax = axios.create({
     //   baseURL: "http://localhost:3010/",
     // });
     axios
       .get("http://localhost:3010/notes")
       .then((response) => response.data)
-      .then((res) => this.setState({ data: res }));
-  }
+      .then((res) => setData({ data: res }));
+  }, []);
 
-  postData = () => {
+  const postInputData = () => {
     axios
       .post("http://localhost:3010/notes", {
-        id: "",
-        firstname: `${this.state.firstname}`,
-        lastname: `${this.state.lastname}`,
-        phone: `${this.state.phonenumber}`,
-        role: `${this.state.role}`,
-        message: `${this.state.message}`,
+        ...inputData,
       })
       .then((res) => console.log(res))
       .catch((error) => console.log(error));
-    this.handleRefresh();
+    handleRefresh();
   };
 
-  deleteItem = (id) => {
+  const deleteItem = (id) => {
     axios.delete(`http://localhost:3010/notes/${id}`).then((res) => {
-      const notes = this.state.data.filter((item) => item.id !== id);
-      this.setState({ data: notes });
+      const notes = data.data.filter((item) => item.id !== id);
+      setData({ data: notes });
     });
   };
 
-  editItem = (item) => {
+  const editItem = (item) => {
     // axios
     //   .get(`http://localhost:3010/notes/${item.id}`)
     //   .then((res) => this.setState({ editMode: true, note: res.data }));
-    this.setState({ editMode: true, note: item });
+    setEditMode({ editMode: true });
+    setNote({ note: item });
   };
 
-  handleEditChange = (e) => {
-    this.setState({
-      note: { ...this.state.note, [e.target.name]: e.target.value },
-    });
+  const handleEditChange = (e) => {
+    setNote({ ...note, [e.target.name]: e.target.value });
   };
 
-  handleEdit = (id) => {
+  const handleUpdate = (id) => {
     axios
-      .put(`http://localhost:3010/notes/${id}`, this.state.note)
-      .then((res) => res.data);
+      .put(`http://localhost:3010/notes/${id}`, note)
+      .then((res) => res.data)
+      .catch((e) => {
+        console.log(e);
+      });
   };
 
-  closeEdit = () => {
-    this.setState({ editMode: false });
+  const closeEditHandler = () => {
+    setEditMode(!editMode);
   };
 
-  render() {
-    return (
-      <div className="App">
-        <Header />
-        <div className="formView">
-          <Form changes={this.handleChange} submit={this.handleSubmit} />
-          <View {...this.state} />
-        </div>
-        <div>
-          {this.state.editMode ? (
-            <EditForm
-              {...this.state.note}
-              changes={(e) => this.handleEditChange(e, "item")}
-              submit={() => this.handleEdit(this.state.note.id)}
-              closeEdit={this.closeEdit}
-            />
-          ) : (
-            ""
-          )}
-        </div>
-        <div>
-          {this.state.showPopup ? (
-            <Popup
-              firstname={this.state.firstname}
-              lastname={this.state.lastname}
-              phonenumber={this.state.phonenumber}
-              message={this.state.message}
-              role={this.state.role}
-              closePopup={this.handleRefresh}
-              cancelPost={this.cancelPost}
-              postData={this.postData}
-            />
-          ) : (
-            ""
-          )}
-        </div>
-        <NoteList
-          data={this.state.data}
-          deleteNote={(e) => this.deleteItem(e, "id")}
-          editNote={(e) => this.editItem(e, "item")}
-        />
-        <Footer />
+  return (
+    <div className="App">
+      <Header />
+      <div className="formView">
+        <Form changes={handleChange} submit={handleSubmit} />
+        <View {...inputData} />
       </div>
-    );
-  }
-}
+      <div>
+        {console.log(note?.note?.id)}
+        {editMode ? (
+          <EditForm
+            {...note}
+            changes={(e) => handleEditChange(e, "item")}
+            submit={() => handleUpdate(note.id)}
+            closeEdit={closeEditHandler}
+          />
+        ) : (
+          ""
+        )}
+      </div>
+      <div>
+        {showPopup && (
+          <Popup
+            {...inputData}
+            postData={postInputData}
+            cancelPost={cancelPosting}
+          />
+        )}
+      </div>
+      <NoteList
+        data={data.data}
+        deleteNote={(e) => deleteItem(e, "id")}
+        editNote={(e) => editItem(e, "item")}
+      />
+      <Footer />
+    </div>
+  );
+};
 
 export default App;

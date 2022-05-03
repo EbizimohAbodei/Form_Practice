@@ -17,12 +17,12 @@ const NodeList = (props) => {
           </tr>
         </thead>
         <tbody>
-          {props.data.map((listItem) => (
+          {props.data?.map((listItem) => (
             <tr key={listItem.id} id={listItem.id}>
               <td>{count++}</td>
               <td>{listItem.firstname}</td>
               <td>{listItem.lastname}</td>
-              <td>{listItem.phone}</td>
+              <td>{listItem.phonenumber}</td>
               <td>{listItem.role}</td>
               <td>{listItem.message}</td>
               <td>

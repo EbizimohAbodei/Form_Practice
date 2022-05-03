@@ -67,9 +67,8 @@ select {
   }
 
   .submit {
-    display: flex;
-    justify-content: center;
     width: 5rem;
     padding: 0.6rem;
+    margin: 0.5rem 0 0 7rem;
   }
 }

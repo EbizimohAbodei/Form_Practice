@@ -39,11 +39,11 @@ const Form = (props) => {
           <label htmlFor="phoneNumber"></label>
           Phone Number:
           <input
-            type="text"
-            id="phoneNumber"
+            type="number"
+            id="phonenumber"
             name="phonenumber"
             required
-            defaultValue={props.phone}
+            defaultValue={props.phonenumber}
           />
         </div>
 

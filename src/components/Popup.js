@@ -1,15 +1,11 @@
 import React from "react";
 import classes from "./Popup.module.css";
-import { RiCloseLine } from "react-icons/ri";
 
 const Popup = (props) => {
   return (
     <div className={classes.PopupContainer}>
       <div className={classes.popup}>
         <h3>Your Information</h3>
-        <button className={classes.remove} onClick={props.closePopup}>
-          <RiCloseLine />
-        </button>
         <p className={classes.paragraph}>
           Firstname:<span className={classes.popupText}>{props.firstname}</span>
         </p>

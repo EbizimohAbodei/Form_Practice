@@ -3,7 +3,7 @@
   justify-content: center;
   width: 100%;
   position: absolute;
-  top: 8%;
+  top: 7.5%;
   height: 150%;
   background-color: #d5d4d4;
   opacity: 0.9;
@@ -33,10 +33,12 @@
 
 @media only screen and (max-width: 800px) {
   .closeButton {
-    margin-left: 10rem;
+    margin-left: 4rem;
   }
 
   .popup Form {
     width: 15rem;
+    margin-top: 12rem;
+    margin-left: -4rem;
   }
 }

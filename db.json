@@ -4,25 +4,41 @@
       "id": 3,
       "firstname": "Greg",
       "lastname": "Matson",
-      "phone": "095557344",
+      "phonenumber": "095557344",
       "role": "Asst. Principal",
       "message": "Did you do your assignments"
-    },
-    {
-      "id": 4,
-      "firstname": "Summer",
-      "lastname": "John",
-      "phone": "0933733474",
-      "role": "Student",
-      "message": "Something random added new stuff"
     },
     {
       "id": 5,
       "firstname": "Jackson",
       "lastname": "Madison",
-      "phone": "09447762663",
+      "phonenumber": "09447762663",
       "role": "Visitor",
       "message": "Visiting the school premises edited"
+    },
+    {
+      "id": 7,
+      "firstname": "Annabella",
+      "lastname": "Jameson",
+      "phonenumber": "0937646374334",
+      "role": "Student",
+      "message": "New student on the block "
+    },
+    {
+      "firstname": "Abel",
+      "lastname": "Shantel",
+      "phonenumber": "0937836434334",
+      "message": "Testing",
+      "role": "Student",
+      "id": 8
+    },
+    {
+      "firstname": "Nengi",
+      "lastname": "Jacobs",
+      "phonenumber": "09234824334",
+      "message": "New student added",
+      "role": "Student",
+      "id": 9
     }
   ]
 }

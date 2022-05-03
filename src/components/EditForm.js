@@ -3,10 +3,11 @@ import Form from "./Form";
 import classes from "./EditForm.module.css";
 
 const EditForm = (props) => {
+  console.log(props.note);
   return (
     <div className={classes.PopupContainer}>
       <div className={classes.popup}>
-        <Form {...props} />
+        <Form {...props.note} />
         <input
           className={classes.closeButton}
           type="submit"
