@@ -18,6 +18,7 @@ const Form = (props) => {
             id="firstname"
             className={classes.inputFirstname}
             required
+            defaultValue={props.firstname}
           />
         </div>
 
@@ -30,19 +31,32 @@ const Form = (props) => {
             name="lastname"
             className={classes.inputLastname}
             required
+            defaultValue={props.lastname}
           />
         </div>
 
         <div className={classes.subContainer}>
           <label htmlFor="phoneNumber"></label>
           Phone Number:
-          <input type="text" id="phoneNumber" name="phonenumber" required />
+          <input
+            type="text"
+            id="phoneNumber"
+            name="phonenumber"
+            required
+            defaultValue={props.phone}
+          />
         </div>
 
         <div className={classes.subContainer}>
           <label htmlFor="role" className={classes.role}></label>
           Role:
-          <select default="Default" name="role" id="role" required>
+          <select
+            default="Default"
+            name="role"
+            id="role"
+            required
+            defaultValue={props.role}
+          >
             <option value="" invalid="true" hidden>
               Choose an option
             </option>
@@ -58,7 +72,13 @@ const Form = (props) => {
         <div className={classes.subContainer}>
           <label htmlFor="message"> </label>
           Message:
-          <textarea name="message" id="message" rows={5} required></textarea>
+          <textarea
+            name="message"
+            id="message"
+            rows={5}
+            required
+            defaultValue={props.message}
+          ></textarea>
         </div>
 
         <input className={classes.submit} type="submit" value="Submit" />

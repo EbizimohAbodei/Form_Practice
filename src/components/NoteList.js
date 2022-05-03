@@ -1,6 +1,7 @@
 import React from "react";
 
 const NodeList = (props) => {
+  let count = 1;
   return (
     <div className="noteList">
       <p className="title">Data from local server</p>
@@ -17,13 +18,27 @@ const NodeList = (props) => {
         </thead>
         <tbody>
           {props.data.map((listItem) => (
-            <tr key={listItem.id}>
-              <td>{listItem.id}</td>
+            <tr key={listItem.id} id={listItem.id}>
+              <td>{count++}</td>
               <td>{listItem.firstname}</td>
               <td>{listItem.lastname}</td>
               <td>{listItem.phone}</td>
               <td>{listItem.role}</td>
               <td>{listItem.message}</td>
+              <td>
+                <i
+                  className="material-icons"
+                  onClick={() => props.deleteNote(listItem.id)}
+                >
+                  delete_forever
+                </i>
+                <i
+                  className="material-icons"
+                  onClick={() => props.editNote(listItem)}
+                >
+                  edit
+                </i>
+              </td>
             </tr>
           ))}
         </tbody>

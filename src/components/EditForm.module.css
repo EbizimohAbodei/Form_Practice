@@ -1,0 +1,42 @@
+.PopupContainer {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  position: absolute;
+  top: 8%;
+  height: 150%;
+  background-color: #d5d4d4;
+  opacity: 0.9;
+  z-index: 1;
+}
+
+.popup {
+  margin: 12rem auto 0 auto;
+}
+
+.popup Form {
+  width: 30rem;
+}
+
+.closeButton {
+  width: 5rem;
+  padding: 0.6rem;
+  background-color: #cfcbcb;
+  border-radius: 0.5rem;
+  margin-left: 14.5rem;
+}
+
+.closeButton:hover {
+  background-color: #565555;
+  cursor: pointer;
+}
+
+@media only screen and (max-width: 800px) {
+  .closeButton {
+    margin-left: 10rem;
+  }
+
+  .popup Form {
+    width: 15rem;
+  }
+}

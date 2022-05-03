@@ -14,10 +14,6 @@ header {
   width: auto;
 }
 
-header h1 {
-  margin: 1rem;
-}
-
 body {
   background-color: #f1edee;
 }
@@ -62,7 +58,32 @@ td {
 }
 
 tr:nth-child(even) {
-  background-color: #efe2e5;
+  background-color: #cfcbcb;
+}
+
+.material-icons {
+  color: #434242;
+}
+
+.material-icons:hover {
+  cursor: pointer;
+  color: #111111;
+}
+
+.closeButton {
+  display: flex;
+  justify-content: center;
+  width: 5rem;
+  padding: 0.6rem;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: #cfcbcb;
+  border-radius: 0.5rem;
+}
+
+.closeButton:hover {
+  background-color: #565555;
+  cursor: pointer;
 }
 
 footer {

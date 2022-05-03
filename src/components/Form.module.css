@@ -36,7 +36,15 @@ select {
   justify-content: center;
   width: 5rem;
   padding: 0.6rem;
-  margin-left: 8.4rem;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: #cfcbcb;
+  border-radius: 0.5rem;
+}
+
+.submit:hover {
+  background-color: #565555;
+  cursor: pointer;
 }
 
 @media only screen and (max-width: 800px) {

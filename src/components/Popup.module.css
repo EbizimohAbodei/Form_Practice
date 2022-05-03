@@ -22,7 +22,7 @@
   position: absolute;
   top: 20%;
   opacity: 0.9;
-  background-color: #c8adb3;
+  background-color: #d5d4d4;
   border-radius: 0.5rem;
   padding: 2rem;
   z-index: 1;
@@ -53,6 +53,6 @@
 
 .cancelPostBtn:hover,
 .postBtn:hover {
-  background-color: #a2697a;
+  background-color: #363535;
   cursor: pointer;
 }

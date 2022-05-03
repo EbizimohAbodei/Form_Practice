@@ -1,22 +1,6 @@
 {
   "notes": [
     {
-      "id": 1,
-      "firstname": "Emmanuel",
-      "lastname": "David",
-      "phone": "337733794",
-      "role": "Principal",
-      "message": "The brown fox did something"
-    },
-    {
-      "id": 2,
-      "firstname": "Anna",
-      "lastname": "Jammo",
-      "phone": "84757445",
-      "role": "Teacher",
-      "message": "Some random message from the teacher"
-    },
-    {
       "id": 3,
       "firstname": "Greg",
       "lastname": "Matson",
@@ -29,32 +13,16 @@
       "firstname": "Summer",
       "lastname": "John",
       "phone": "0933733474",
-      "role": "Cleaner",
-      "message": "Something random"
+      "role": "Student",
+      "message": "Something random added new stuff"
     },
     {
       "id": 5,
-      "firstname": "Anita",
-      "lastname": "James",
-      "phone": "0933647443",
-      "role": "Student",
-      "message": "Trying a new message"
-    },
-    {
-      "id": 6,
-      "firstname": "Toni",
-      "lastname": "Nissinen",
-      "phone": "0988447753",
+      "firstname": "Jackson",
+      "lastname": "Madison",
+      "phone": "09447762663",
       "role": "Visitor",
-      "message": "Visiting the school is prohibited"
-    },
-    {
-      "id": 7,
-      "firstname": "Jennifer",
-      "lastname": "Kats",
-      "phone": "0944632733",
-      "role": "Student",
-      "message": "New student on the block"
+      "message": "Visiting the school premises edited"
     }
   ]
 }

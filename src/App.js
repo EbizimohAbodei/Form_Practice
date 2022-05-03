@@ -1,11 +1,12 @@
 import "./index.css";
-import React, { Component } from "react";
+import React, { useState, useEffect, Component } from "react";
 import Form from "./components/Form";
 import View from "./components/View";
 import Popup from "./components/Popup";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import NoteList from "./components/NoteList";
+import EditForm from "./components/EditForm";
 const axios = require("axios").default;
 
 class App extends Component {
@@ -16,7 +17,9 @@ class App extends Component {
     message: " ",
     role: " ",
     data: [],
+    note: [],
     showPopup: false,
+    editMode: false,
   };
 
   handleChange = (e) => {
@@ -61,6 +64,36 @@ class App extends Component {
     this.handleRefresh();
   };
 
+  deleteItem = (id) => {
+    axios.delete(`http://localhost:3010/notes/${id}`).then((res) => {
+      const notes = this.state.data.filter((item) => item.id !== id);
+      this.setState({ data: notes });
+    });
+  };
+
+  editItem = (item) => {
+    // axios
+    //   .get(`http://localhost:3010/notes/${item.id}`)
+    //   .then((res) => this.setState({ editMode: true, note: res.data }));
+    this.setState({ editMode: true, note: item });
+  };
+
+  handleEditChange = (e) => {
+    this.setState({
+      note: { ...this.state.note, [e.target.name]: e.target.value },
+    });
+  };
+
+  handleEdit = (id) => {
+    axios
+      .put(`http://localhost:3010/notes/${id}`, this.state.note)
+      .then((res) => res.data);
+  };
+
+  closeEdit = () => {
+    this.setState({ editMode: false });
+  };
+
   render() {
     return (
       <div className="App">
@@ -68,6 +101,18 @@ class App extends Component {
         <div className="formView">
           <Form changes={this.handleChange} submit={this.handleSubmit} />
           <View {...this.state} />
+        </div>
+        <div>
+          {this.state.editMode ? (
+            <EditForm
+              {...this.state.note}
+              changes={(e) => this.handleEditChange(e, "item")}
+              submit={() => this.handleEdit(this.state.note.id)}
+              closeEdit={this.closeEdit}
+            />
+          ) : (
+            ""
+          )}
         </div>
         <div>
           {this.state.showPopup ? (
@@ -85,7 +130,11 @@ class App extends Component {
             ""
           )}
         </div>
-        <NoteList data={this.state.data} />
+        <NoteList
+          data={this.state.data}
+          deleteNote={(e) => this.deleteItem(e, "id")}
+          editNote={(e) => this.editItem(e, "item")}
+        />
         <Footer />
       </div>
     );
